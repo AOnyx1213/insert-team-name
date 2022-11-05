@@ -6,7 +6,7 @@ public class script : MonoBehaviour
 {
     public Rigidbody2D rb;
     private Animator anim;
-    public ProjectileScript ProjectilePrefab;
+    //public ProjectileScript ProjectilePrefab;
     public Transform LaunchOffset;
 
     // Start is called before the first frame update
@@ -48,7 +48,7 @@ public class script : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+            //Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
         }
 
 
