@@ -5,18 +5,14 @@ using UnityEngine;
 public class script : MonoBehaviour
 {
     public Rigidbody2D rb;
-    private BoxCollider2D coll;
     private Animator anim;
     public ProjectileScript ProjectilePrefab;
     public Transform LaunchOffset;
-
-    [SerializeField] private LayerMask jumpableGround;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        coll = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
 
     }
@@ -32,7 +28,7 @@ public class script : MonoBehaviour
         float dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * 7f, rb.velocity.y);
         
-        if(Input.GetButtonDown("Jump") && isGrounded())
+        if(Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, 11f);
         }
@@ -57,12 +53,6 @@ public class script : MonoBehaviour
 
 
     }
-    private bool isGrounded()
-    {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
-    }
-
-    
 
     
 }
