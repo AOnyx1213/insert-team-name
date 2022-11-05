@@ -6,9 +6,18 @@ public class script : MonoBehaviour
 {
     public Rigidbody2D rb;
     private Animator anim;
-    public ProjectileScript ProjectilePrefab;
-    public Transform LaunchOffset;
+    
+    
     public Transform destination;
+    public Vector2 speed = new Vector2(50, 50);
+    public float InputX;
+    public float InputY;
+    public float MovementSpeed = 1;
+    public float JumpForce = 1;
+
+    public ProjectileBehaviour ProjectilePrefab;
+    public Transform LaunchOffset;
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,17 +25,23 @@ public class script : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
-
-    public Vector2 speed = new Vector2(50, 50);
-
-    public float InputX;
-    public float InputY;
+        
 
     // Update is called once per frame
     void Update()
     {
-        float dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * 7f, rb.velocity.y);
+        //float dirX = Input.GetAxisRaw("Horizontal");
+
+        //New movement
+        var movement = Input.GetAxis("Horizontal");
+        //transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
+
+
+        //Smoothness
+        //if (!Mathf.Approximately(0, movement))
+        //    transform.rotation = movement > 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+
+        //rb.velocity = new Vector2(dirX * 7f, rb.velocity.y);
 
         if (rb.transform.position.y <-7)
         {
@@ -38,16 +53,20 @@ public class script : MonoBehaviour
             death();
         }
         
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 11f);
+            //Old movement
+            //rb.velocity = new Vector2(rb.velocity.x, 11f);
+
+            //New Movement
+            rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
 
-        if(dirX > 0f)
+        if(movement > 0f)
         {
             anim.SetBool("Running", true);
         }
-        else if(dirX < 0f)
+        else if(movement < 0f)
         {
             anim.SetBool("Running", true);
         }
