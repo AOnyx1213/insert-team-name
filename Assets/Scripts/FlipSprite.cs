@@ -18,16 +18,16 @@ public class FlipSprite : MonoBehaviour
         {
             if(mySpriteRenderer != null)
             {
-                mySpriteRenderer.flipX = false;
+                if (mySpriteRenderer.flipX == true)
+                    mySpriteRenderer.flipX = false;
+                    
             }
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (mySpriteRenderer != null)
-            {
-                transform.Rotate(0f, 180f, 0f);
-            }
+            if (mySpriteRenderer.flipX == false)
+                mySpriteRenderer.flipX = true;
         }
     }
 }
