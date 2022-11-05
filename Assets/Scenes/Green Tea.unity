@@ -345,6 +345,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e121640d2cea1a44bbdcb59f7b3c12e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  degreesPerSecond: 15
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &1106241992
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,6 +962,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   ProjectilePrefab: {fileID: 2810533024588160983, guid: 199cbecffede3c44db76bc605e7568f4, type: 3}
   LaunchOffset: {fileID: 213287376}
+  destination: {fileID: 0}
   speed: {x: 50, y: 50}
   InputX: 0
   InputY: 0
@@ -1069,7 +1073,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139895212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.67, y: -3.29, z: 0}
+  m_LocalPosition: {x: -11.57, y: -3.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

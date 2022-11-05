@@ -8,6 +8,7 @@ public class script : MonoBehaviour
     private Animator anim;
     public ProjectileScript ProjectilePrefab;
     public Transform LaunchOffset;
+    public Transform destination;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,16 @@ public class script : MonoBehaviour
     {
         float dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * 7f, rb.velocity.y);
+
+        if (rb.transform.position.y <-7)
+        {
+            void death()
+            {
+                this.rb.transform.position = destination.position;
+            }
+
+            death();
+        }
         
         if(Input.GetButtonDown("Jump"))
         {
