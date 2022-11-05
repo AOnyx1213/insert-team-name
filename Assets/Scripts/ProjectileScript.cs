@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileScript : MonoBehaviour
 {
-    public float Speed = 2.5f;
+    public float Speed = 22.4f;
 
     // Update is called once per frame
     void Update()
@@ -14,6 +14,6 @@ public class ProjectileScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 }
