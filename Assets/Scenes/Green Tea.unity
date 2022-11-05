@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32399374, g: 0.25494194, b: 0.24936198, a: 1}
+  m_IndirectSpecularColor: {r: 0.3237275, g: 0.25466093, b: 0.24900106, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,8 +134,8 @@ GameObject:
   - component: {fileID: 83677351}
   - component: {fileID: 83677353}
   - component: {fileID: 83677352}
-  m_Layer: 5
-  m_Name: HealthBar
+  m_Layer: 0
+  m_Name: HealthBarInner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,10 +156,10 @@ RectTransform:
   m_Father: {fileID: 2101906168}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -408.74, y: -183.8}
-  m_SizeDelta: {x: 7.6239, y: 0.7823}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -16.160004, y: -366.15}
+  m_SizeDelta: {x: 3.6933, y: 0.3876}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &83677352
 MonoBehaviour:
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 361837650}
   - component: {fileID: 361837652}
   - component: {fileID: 361837651}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,10 +277,10 @@ RectTransform:
   m_Father: {fileID: 2101906168}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -408.74, y: -183.8}
-  m_SizeDelta: {x: 8.8571, y: 1.0107}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -16.16, y: -366.15}
+  m_SizeDelta: {x: 3.9102, y: 0.5938}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &361837651
 MonoBehaviour:
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1411,7 +1411,7 @@ GameObject:
   - component: {fileID: 2101906167}
   - component: {fileID: 2101906166}
   - component: {fileID: 2101906165}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
