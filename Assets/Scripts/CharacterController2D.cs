@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(CapsuleCollider2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -18,7 +18,7 @@ public class CharacterController2D : MonoBehaviour
     bool isGrounded = false;
     Vector3 cameraPos;
     Rigidbody2D r2d;
-    CapsuleCollider2D mainCollider;
+    BoxCollider2D mainCollider;
     Transform t;
 
     // Use this for initialization
@@ -26,7 +26,7 @@ public class CharacterController2D : MonoBehaviour
     {
         t = transform;
         r2d = GetComponent<Rigidbody2D>();
-        mainCollider = GetComponent<CapsuleCollider2D>();
+        mainCollider = GetComponent<BoxCollider2D>();
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
