@@ -26,7 +26,7 @@ public class FlipSprite : MonoBehaviour
         {
             if (mySpriteRenderer != null)
             {
-                mySpriteRenderer.flipX = true;
+                transform.Rotate(0f, 180f, 0f);
             }
         }
     }
