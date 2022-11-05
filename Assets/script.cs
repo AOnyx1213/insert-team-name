@@ -6,6 +6,9 @@ public class script : MonoBehaviour
 {
     public Rigidbody2D rb;
     private Animator anim;
+    public ProjectileScript ProjectilePrefab;
+    public Transform LaunchOffset;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +22,6 @@ public class script : MonoBehaviour
     public float InputY;
 
     // Update is called once per frame
-
-
     void Update()
     {
         float dirX = Input.GetAxisRaw("Horizontal");
@@ -52,7 +53,10 @@ public class script : MonoBehaviour
 
         //transform.Translate(movement);
 
-        
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+        }
 
 
     }
