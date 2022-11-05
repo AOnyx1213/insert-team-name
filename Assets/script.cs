@@ -18,6 +18,8 @@ public class script : MonoBehaviour
     public float InputY;
 
     // Update is called once per frame
+
+
     void Update()
     {
         float dirX = Input.GetAxisRaw("Horizontal");
@@ -25,7 +27,7 @@ public class script : MonoBehaviour
         
         if(Input.GetButtonDown("Jump"))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 14f);
+            rb.velocity = new Vector2(rb.velocity.x, 11f);
         }
         //float inputX = Input.GetAxis("Horizontal");
         //float inputY = Input.GetAxis("Vertical");
@@ -35,5 +37,9 @@ public class script : MonoBehaviour
         //movement *= Time.deltaTime;
 
         //transform.Translate(movement);
+
+        
+
+
     }
 }
