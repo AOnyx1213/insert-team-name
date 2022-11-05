@@ -8,13 +8,13 @@ public class script : MonoBehaviour
     private Animator anim;
     public ProjectileScript ProjectilePrefab;
     public Transform LaunchOffset;
-    public Transform destination;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
     }
 
     public Vector2 speed = new Vector2(50, 50);
@@ -27,16 +27,6 @@ public class script : MonoBehaviour
     {
         float dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * 7f, rb.velocity.y);
-
-        if (rb.transform.position.y <-7)
-        {
-            void death()
-            {
-                this.rb.transform.position = destination.position;
-            }
-
-            death();
-        }
         
         if(Input.GetButtonDown("Jump"))
         {
@@ -55,14 +45,6 @@ public class script : MonoBehaviour
         {
             anim.SetBool("Running", false);
         }
-        //float inputX = Input.GetAxis("Horizontal");
-        //float inputY = Input.GetAxis("Vertical");
-
-        //Vector3 movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
-
-        //movement *= Time.deltaTime;
-
-        //transform.Translate(movement);
 
         if (Input.GetButtonDown("Fire1"))
         {
@@ -71,4 +53,6 @@ public class script : MonoBehaviour
 
 
     }
+
+    
 }
